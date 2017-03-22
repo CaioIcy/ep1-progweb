@@ -1,0 +1,11 @@
+{% extends "absentpi/absentpi.html" %}
+
+{% block content %}
+<h1>Entry {{ entry.id }}</h1>
+
+<h2>Title</h2>
+{{ entry.title }}
+
+<h2>Text</h2>
+{{ entry.text }}
+{% endblock %}
