@@ -12,13 +12,15 @@
     </form>
 </section>
 
+{% if latest_entries|length > 0 %}
 <section id="latest_entries">
-    <h1> Last {{ latest_entries|length }} Entries </h1>
+    <h1> Lastest Entries </h1>
     <ul>
     {% for entry in latest_entries %}
         <li><a href="{% url 'absentpi-show' entry.id %}">{{ entry }}</a></li>
     {% endfor %}
     </ul>
 </section>
+{% endif %}
 
 {% endblock %}
