@@ -4,12 +4,26 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="{% static 'absentpi/style.css' %}" />
-    <title>{% block title %}{{ title|default:'AbsentPI' }}{% endblock %}</title>
+    <title>{% block title %}{{ title|default:'Absent Pi' }}{% endblock %}</title>
 </head>
+
+<header class="highlight">
+    <nav>
+        <ul>
+            <li><a href="{% url 'absentpi-index' %}">Absent Pi</a></li>
+            <li><a href="{% url 'absentpi-random' %}">Random</a></li>
+        </ul>
+    </nav>
+</header>
 
 <body>
     <div id="content">
         {% block content %}{% endblock %}
     </div>
 </body>
+
+<footer class="highlight">
+    <a href="https://github.com/CaioIcy/ep1-progweb">Source Code</a>
+</footer>
+
 </html>
