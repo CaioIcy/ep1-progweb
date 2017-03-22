@@ -31,6 +31,8 @@ def show(request, entry_id):
 
 def random(request):
     count = Entry.objects.aggregate(count=Count('id'))['count']
+    if count <= 0:
+        return HttpResponseRedirect(reverse('absentpi-index'))
     random_index = randint(0, count - 1)
     entry_id = Entry.objects.all()[random_index].id
     url = reverse('absentpi-show', kwargs={'entry_id': entry_id})
